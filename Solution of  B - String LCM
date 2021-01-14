@@ -1,0 +1,46 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  int T;
+  scanf("%d",&T);
+  while(T--)
+  {
+    string s,t;
+    int a=0;
+    cin>> s;
+    cin>> t;
+    int d1 = s.length();
+    int d2 = t.length();
+    int d = d1*d2;
+    string s1 = s;
+    string t1 = t;
+    while(d--)
+    {
+      if(s.length()>t.length())
+      {
+         t.append(t1);
+      }
+      else if(s.length()<t.length())
+      {
+        s.append(s1);
+      }
+      else if(s.length() == t.length() && s==t)
+      {
+       
+        a++;
+        break;
+      }
+    }
+    if(a == 0)
+    {
+      cout << "-1" << endl;
+    }
+    else if(a>0)
+    {
+      cout << s << endl;
+    }
+  }
+}
